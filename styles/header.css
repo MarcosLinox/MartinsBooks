@@ -1,0 +1,53 @@
+.cabeçalho{
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /*
+    position: relative; serve para liberar a opção colocar outros elementos como top left right bottom
+    position: absolute; serve para movimentar o elemento de acordo com outro que veio antes qeu tenha a 
+    position diferente de static (padrão).
+    */
+}
+
+.conteiner{
+    display: flex;
+    align-items: center;
+}
+
+.cabeçalho__menuHamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url('../assets/Menu.svg'); /* os dois pontos serve para voltar uma pagina*/
+    display: inline-block;
+    /*
+    aprendizado sobre inline-block: https://www.youtube.com/watch?v=FbhyMKdse9U
+    por padrão a tag span é inline, ou seja, não aceita propriedades de largura e 
+    altura. ela terá apenas o tamanho do conteúdo que estiver dentro dela.
+
+    por padrão a tag div é block, ou seja, quebra a linha antes e depois dela. 
+    O block terá o tamanho total disponível do elemento pai, a menos que seja
+    definido uma largura específica.
+
+    o inline-block é uma mistura dos dois. ele não quebra a linha antes e depois
+    dele, mas aceita propriedades de largura e altura.
+    */
+    background-repeat: no-repeat; /* quando passa do tamanho 24 px definico ele se repete.
+    isso bloqueia isso.*/
+}
+
+.conteiner__imagem{
+    padding: 1em;
+}
+
+.lista__menu{
+    display: none; /* escondendo o menu por enquanto */
+    position: absolute; /* tirando o menu do fluxo normal da página */
+    top: 50%; /* posicionando o menu logo abaixo do cabeçalho */
+}
+
+.conteiner__botao:checked ~ .lista__menu{ /* checked serve para detectar se está selecionado */
+    /* o ~ combinador css serve para procurar um elemento que tema a classe que colocou depois*/
+    display: block; /* quando o checkbox estiver marcado, o menu aparece */
+}

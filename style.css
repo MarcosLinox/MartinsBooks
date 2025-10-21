@@ -1,0 +1,13 @@
+@import url("styles/header.css"); /* isso é bom para não fazer o navegador carregar vários
+css, ele irá fazer só desse. e não precisará ter vários links no html.*/
+
+:root {
+    --cor-fundo: #EBECEE; /* CRIANDO UMA VAIRAVEL PARA COR DE FUNDO */
+    --branco: #FFFFFF; /* CRIANDO UMA VARIAVEL PARA A COR BRANCO */
+}
+
+body {
+    background-color: var(--cor-fundo); /* COLOCANDO A COR DE FUNDO USANDO A VARIAVEL */
+}
+
+

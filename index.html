@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">    
+    <title>AluraBooks</title>
+</head>
+<body>
+    <header class="cabeçalho">
+        <div class="conteiner">
+            <input type="checkbox" id="menu" class="conteiner__botao">
+            <!-- label serve para associar o clique no ícone ao checkbox acima usando o id -->
+            <label for="menu">
+                <span class="cabeçalho__menuHamburguer conteiner__imagem"></span>
+            </label>
+            <ul class="lista__menu">
+                <li class="lista__menu__titulo">Categorias</li>
+                <li class="lista__menu__item">
+                    <a href="#" class="lista__menu__link">Programação</a>
+                </li>
+                <li>
+                    <a href="#" class="lista__menu__link">Front-end</a>
+                </li>
+                <li>
+                    <a href="#" class="lista__menu__link">Infraestrutura</a>
+                </li>
+                <li>
+                    <a href="#" class="lista__menu__link">Business</a>
+                </li>
+                <li>
+                    <a href="#" class="lista__menu__link">Desing & UX</a>
+                </li>
+            </ul>
+            <img class="conteiner__imagem" src="assets/Logo.svg" alt="Logo da AluraBooks">
+        </div>
+        <div class="conteiner">
+            <a class="conteiner__imagem" href="#"><img src="assets/Favoritos.svg" alt="Meus favoritos"></a>
+            <a class="conteiner__imagem" href="#"><img src="assets/Usuario.svg" alt="Meu perfil"></a>
+            <a class="conteiner__imagem" href="#"><img src="assets/Compras.svg" alt="Carrinho de compras"></a>
+        </div>
+
+    </header>
+</body>
+</html>
