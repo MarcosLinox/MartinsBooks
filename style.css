@@ -1,13 +1,20 @@
 @import url("styles/header.css"); /* isso é bom para não fazer o navegador carregar vários
 css, ele irá fazer só desse. e não precisará ter vários links no html.*/
+@import url("styles/banner.css");
 
 :root {
     --cor-fundo: #EBECEE; /* CRIANDO UMA VAIRAVEL PARA COR DE FUNDO */
     --branco: #FFFFFF; /* CRIANDO UMA VARIAVEL PARA A COR BRANCO */
+    --laranja: #EB9B00; /* CRIANDO UMA VARIAVEL PARA A COR LARANJA */
+    --azul-degrade: linear-gradient(97.54deg, #002F53 35.49%, #326589 165.37%); /* CRIANDO UMA VARIAVEL PARA DEGRADE AZUL */
+    --fonte-principal: 'Poppins', sans-serif; /* CRIANDO UMA VARIAVEL PARA A FONTE PRINCIPAL */
 }
 
 body {
     background-color: var(--cor-fundo); /* COLOCANDO A COR DE FUNDO USANDO A VARIAVEL */
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    font-weight: 400;
 }
 
 

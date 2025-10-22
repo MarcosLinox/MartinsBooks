@@ -35,6 +35,7 @@
     */
     background-repeat: no-repeat; /* quando passa do tamanho 24 px definico ele se repete.
     isso bloqueia isso.*/
+    background-position: center; /* centraliza a imagem dentro do span */
 }
 
 .conteiner__imagem{
@@ -44,10 +45,34 @@
 .lista__menu{
     display: none; /* escondendo o menu por enquanto */
     position: absolute; /* tirando o menu do fluxo normal da página */
-    top: 50%; /* posicionando o menu logo abaixo do cabeçalho */
+    top: 100%; /* posicionando o menu logo abaixo do cabeçalho */
+    width: 60vw;
 }
 
 .conteiner__botao:checked ~ .lista__menu{ /* checked serve para detectar se está selecionado */
     /* o ~ combinador css serve para procurar um elemento que tema a classe que colocou depois*/
     display: block; /* quando o checkbox estiver marcado, o menu aparece */
+}
+
+.lista__menu__titulo, .lista__menu__item{
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.lista__menu__titulo{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+.lista__menu__link{
+    text-decoration: none;
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.conteiner__botao{
+    display: none; /* escondendo o checkbox */
 }
