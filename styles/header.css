@@ -1,78 +1,172 @@
+.cabeçalho__menu-hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url('../assets/Menu.svg');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .cabeçalho{
-    background-color: #FFFFFF;
+    background-color:var(--branco);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    /*
-    position: relative; serve para liberar a opção colocar outros elementos como top left right bottom
-    position: absolute; serve para movimentar o elemento de acordo com outro que veio antes qeu tenha a 
-    position diferente de static (padrão).
-    */
 }
-
 .conteiner{
     display: flex;
     align-items: center;
+    
 }
 
-.cabeçalho__menuHamburguer {
-    width: 24px;
-    height: 24px;
-    background-image: url('../assets/Menu.svg'); /* os dois pontos serve para voltar uma pagina*/
-    display: inline-block;
-    /*
-    aprendizado sobre inline-block: https://www.youtube.com/watch?v=FbhyMKdse9U
-    por padrão a tag span é inline, ou seja, não aceita propriedades de largura e 
-    altura. ela terá apenas o tamanho do conteúdo que estiver dentro dela.
-
-    por padrão a tag div é block, ou seja, quebra a linha antes e depois dela. 
-    O block terá o tamanho total disponível do elemento pai, a menos que seja
-    definido uma largura específica.
-
-    o inline-block é uma mistura dos dois. ele não quebra a linha antes e depois
-    dele, mas aceita propriedades de largura e altura.
-    */
-    background-repeat: no-repeat; /* quando passa do tamanho 24 px definico ele se repete.
-    isso bloqueia isso.*/
-    background-position: center; /* centraliza a imagem dentro do span */
-}
-
-.conteiner__imagem{
+.container__imagem{
     padding: 1em;
 }
 
-.lista__menu{
-    display: none; /* escondendo o menu por enquanto */
-    position: absolute; /* tirando o menu do fluxo normal da página */
-    top: 100%; /* posicionando o menu logo abaixo do cabeçalho */
+.lista_menu{
+    display: none;
+    position: absolute;
+    top: 100%;
     width: 60vw;
-}
-
-.conteiner__botao:checked ~ .lista__menu{ /* checked serve para detectar se está selecionado */
-    /* o ~ combinador css serve para procurar um elemento que tema a classe que colocou depois*/
-    display: block; /* quando o checkbox estiver marcado, o menu aparece */
-}
-
-.lista__menu__titulo, .lista__menu__item{
-    padding: 1em;
     background-color: var(--branco);
 }
 
-.lista__menu__titulo{
+.conteiner__botao:checked~.lista_menu{
+    display: block;
+}
+
+.conteiner__botao:checked~.conteiner__label{
+    background: var(--azul-degrade);
+}
+.conteiner__botao:checked~.conteiner__label > .cabeçalho__menu-hamburguer{
+    background-image: url('../assets/menu_black_24dp 1.svg');
+}
+
+.lista_menu__item, .lista_menu__titulo{
+    padding: 1em;
+}
+.lista_menu__titulo{
     color: var(--laranja);
+    text-transform: uppercase;
     font-weight: 700;
 }
-
-.lista__menu__link{
+.lista_menu__link{
+    color: var(--azul-degrade);
     text-decoration: none;
-    background: var(--azul-degrade);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     text-transform: uppercase;
 }
-
 .conteiner__botao{
-    display: none; /* escondendo o checkbox */
+    display: none;
+}
+
+.conteiner__titulo{
+    display: none;
+}
+
+.opcoes{
+    display: none;
+}
+
+.conteiner__span{
+    display: none;
+}
+@media screen and (min-width: 1024px) {
+    .conteiner__titulo, .conteiner__titulo--negrito{
+        font-family: var(--fonte-segundaria);
+        font-size: 30px;
+    }
+
+    .conteiner__titulo{
+        font-weight: 400;
+        display: block;
+    }
+
+    .conteiner__titulo--negrito{
+        font-weight: 700;
+    }
+
+    .opcoes{
+        display: flex;
+    }
+
+    .opcoes__item{
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link{
+        color: var(--preto);
+        text-decoration: none;
+    }
+
+    .conteiner__imagem-transparente{
+        display: none;
+    }
+
+    .cabeçalho__menu-hamburguer{
+        display: none;
+    }
+
+    .cabeçalho{
+        padding: 0 3em;
+    }
+
+    .opcoes__botao:checked~.lista_menu{
+        display: block;
+        width: auto;        
+    }
+
+    .opcoes__botao:checked~.opcoes__label > .opcoes__item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .opcoes__item{
+        padding: 2em 1em;
+    }
+
+    .opcoes__botao{
+        display: none;
+    }
+
+
+
+    .lista_menu__item:hover{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .conteiner__span{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1728px){
+    .conteiner__span{
+        display: block;
+        font-size: 20px;
+        font-weight: 400;
+    }
+    
+    .conteiner__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--azul);
+    }
+
+    .conteiner__botoes{    
+        display: flex;
+        gap: 2em    
+    }
+
+    .conteiner{
+        align-items: left;
+    }
+
+    .opcoes{
+        margin-right: auto;
+        margin-left: 3em;
+    }
 }

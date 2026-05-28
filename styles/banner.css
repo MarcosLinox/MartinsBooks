@@ -3,6 +3,7 @@
     color: var(--branco);
     text-align: center;
     padding: 2.5em 2em;
+    
 }
 
 .banner__titulo{
@@ -18,18 +19,47 @@
 .banner__pesquisa{
     background-color: transparent;
     border: 1px solid var(--branco);
-    color: var(--branco);
     border-radius: 24px;
+    color: var(--branco);
     padding: 1em;
     width: 100%;
 }
-.banner__pesquisa::placeholder{ /* estilizando o texto que aparece dentro do input */
-    font-family: var(--fonte-principal);
+
+.banner__pesquisa::placeholder{
+    color: var(--branco);
     font-size: 14px;
     font-weight: 400;
     text-align: center;
-    color: var(--branco);
-    background: url(../assets/Lupa.svg) no-repeat;
-    background-position: 1em;
+    font-family: var(--fonte-principal);
+    background: url("../assets/Lupa.svg") no-repeat;
+    background-position: 0.07em;
+}
 
+@media screen and (min-width: 1024px) {
+    .banner__titulo{
+        font-size: 36px;
+    }
+
+    .banner__texto{
+        font-size: 16px;
+    }
+
+    .banner__pesquisa{
+        width: 50%;
+    }
+
+    .banner__pesquisa::placeholder{
+        background-position: 6em;
+    }
+}
+
+@media screen and (min-width: 1728px){
+    .banner__pesquisa{
+        width: 30%;
+        margin-bottom: 4em;
+    }
+
+    .banner__titulo{
+        margin-top: 1em;
+    }
 }
